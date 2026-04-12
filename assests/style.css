@@ -4,7 +4,7 @@
 body{
     max-width: 1400px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 0 2rem;
 }
 .poppins-font{
     font-family: "Poppins", sans-serif;
@@ -12,10 +12,13 @@ body{
 .inter-font{
     font-family: "Inter", sans-serif;
 }
-.navbar{
+.navbar,.nav-items, .nav-list, .nav-icons{
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.nav-list, .nav-icons{
+    gap: 2rem;
 }
 .menu-icon, .cart-icon, .search{
     display: none;
@@ -24,78 +27,61 @@ body{
     font-weight: 700;
     font-size: 1.5rem;
 }
-.nav-list{
-    display: flex;
-    gap: 2rem;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 600;
-    font-size: 1rem;
-}
-.nav-list li{
+.nav-list li, .nav-icons li{
     list-style-type: none;
 }
-.nav-list li a{
-        text-decoration: none;
-        color: initial;
+.nav-list li a, .nav-icons li a{
+    text-decoration: none;
+    color: initial;
 }
-@media screen and (min-width: 577px) and (max-width: 800px) {
-    .nav-list li:nth-child(-n+4){
-        display: none;
-    }
-    .categories{
-        flex: 1;
-        /* text-align: center; */
-    }
-    .nav-list{
-        justify-content: flex-end;
-        margin-right: 1.5rem;
-    }
+@media screen and (max-width: 800px) {
     .menu-icon{
         display: block;
         order: 2;
-        border: 1px solid rgba(0, 0, 0, 0.15);
-        padding: 5px;
-        border-radius: 5px;
-        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
     }
-}
-
-@media screen and (max-width: 576px) {
-    .menu-icon, .cart-icon{
-        display: block;
+    .categories{
+        flex: 1;
+    }.nav-icons{
+        margin-right: 2rem;
     }
     .nav-list{
         display: none;
         flex-direction: column;
+        padding: 5px;
         position: absolute;
-        top: 35px;
-        left: 0;
-        background-color: bisque;
-        padding: 10px;
+        top: 20px;
+        right: 0;
     }
-    .menu-icon:hover ~ .nav-list, .search{
-        display: inline-block;
-    }
-    .nav-list:hover{
+    .menu-icon:hover ~ .nav-items .nav-list, .nav-list:hover{
         display: block;
     }
     .nav-list li{
-        margin: 5px;
+        display: flex;
+        justify-content: center;
+        margin: 10px;
         line-height: 1.5;
+        padding: 0 10px 10px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 6px 6px;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
     }
-    .nav-list li a:hover, .nav-list li .search:hover{
-        cursor: pointer;
-        text-decoration: underline;
-        color:  rgb(10, 66, 122);
+    .nav-list li:hover{
+        box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.15);
     }
-    .nav-list li a:active{
-        color: grey;
+}
+
+@media screen and (max-width: 576px) {
+    body{
+        padding: 0 1rem;
     }
-    .nav-list li:nth-child(6){
-        display: none;
+    .menu-icon{
+        order: initial;
+    }
+    .nav-list{
+        left: 0;
+        right: initial;
     }
     .categories{
-        font-size: 1.3rem;
+        text-align: end;
     }
 }
