@@ -1,0 +1,101 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+.poppins-font{
+    font-family: "Poppins", sans-serif;
+}
+.inter-font{
+    font-family: "Inter", sans-serif;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu-icon, .cart-icon, .search{
+    display: none;
+}
+.categories{
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+.nav-list{
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1rem;
+}
+.nav-list li{
+    list-style-type: none;
+}
+.nav-list li a{
+        text-decoration: none;
+        color: initial;
+}
+@media screen and (min-width: 577px) and (max-width: 800px) {
+    .nav-list li:nth-child(-n+4){
+        display: none;
+    }
+    .categories{
+        flex: 1;
+        /* text-align: center; */
+    }
+    .nav-list{
+        justify-content: flex-end;
+        margin-right: 1.5rem;
+    }
+    .menu-icon{
+        display: block;
+        order: 2;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        padding: 5px;
+        border-radius: 5px;
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .menu-icon, .cart-icon{
+        display: block;
+    }
+    .nav-list{
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 35px;
+        left: 0;
+        background-color: bisque;
+        padding: 10px;
+    }
+    .menu-icon:hover ~ .nav-list, .search{
+        display: inline-block;
+    }
+    .nav-list:hover{
+        display: block;
+    }
+    .nav-list li{
+        margin: 5px;
+        line-height: 1.5;
+    }
+    .nav-list li a:hover, .nav-list li .search:hover{
+        cursor: pointer;
+        text-decoration: underline;
+        color:  rgb(10, 66, 122);
+    }
+    .nav-list li a:active{
+        color: grey;
+    }
+    .nav-list li:nth-child(6){
+        display: none;
+    }
+    .categories{
+        font-size: 1.3rem;
+    }
+}
