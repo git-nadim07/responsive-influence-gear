@@ -59,7 +59,7 @@ body{
 .banner br{
     display: none;
 }
-.btn{
+.banner .btn{
     color: white;
     background-color: #E02C6D;
     font-size: 1rem;
@@ -67,6 +67,7 @@ body{
     padding: 10px 15px;
     border: none;
     border-radius: 20px;
+    cursor: pointer;
 }
 .img-div{
     background-image: url('./images/Circle\ design.svg');
@@ -89,6 +90,8 @@ body{
 /* product section */
 .product-section{
     margin: 50px 0;
+    position: relative;
+    padding-bottom: 60px;
 }
 .product-section-title{
     margin: 10px 0 30px 0;
@@ -123,6 +126,16 @@ body{
     font-size: 0.875rem;
     font-weight: 700;
     color: #787885;
+}
+.product-section .btn{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border: none;
+    color: rgba(224, 44, 109, 0.67);
+    background-color: inherit;
+    font-size: 1rem;
+    font-weight: 700;
 }
 
 @media screen and (max-width: 992px) {
@@ -269,7 +282,6 @@ body{
 
     /* product section */
     .product-section-title{
-        /* margin: 10px 0 30px 0; */
         font-size: 1.25rem;
     }
     .card-container{
@@ -290,6 +302,9 @@ body{
     }
     .card p{
         font-size: 0.75rem;
+    }
+    .product-section .btn{
+        right: 20px;
     }
 
 }
