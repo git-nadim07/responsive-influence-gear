@@ -74,6 +74,18 @@ br{
     background-size: contain;
 }
 
+/* brand section */
+.brand-section{
+    margin: 50px 0;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border-top: 1px solid #EDF1F5;
+    border-bottom: 1px solid #EDF1F5;
+    padding: 40px;
+}
+
 @media screen and (max-width: 992px) {
     /* nav section */
     .menu-icon{
@@ -128,6 +140,12 @@ br{
     .img-div img{
         width: 100%;
     }
+
+    /* brand section */
+    .brand-section{
+        justify-content: center;
+    }
+
 }
 
 @media screen and (max-width: 576px) {
@@ -181,5 +199,11 @@ br{
         justify-content: center;
         align-items: center;
         padding-right: 0;
+    }
+
+    /* brand section */
+    .brand-section{
+        border: initial;
+        padding: 0px;
     }
 }
